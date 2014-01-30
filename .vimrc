@@ -20,6 +20,7 @@ NeoBundle 'Shougo/unite.vim'
 " Always start insert mode
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable = 1
+let g:unite_split_rule = "botright"
 " Search settings
 if exists("*unite")
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -63,6 +64,7 @@ NeoBundle 'tpope/vim-surround'
 
 " Vim JS autocompletion with type hints
 NeoBundle 'marijnh/tern_for_vim'
+let g:tern_show_argument_hints = 'on_move'
 
 " Syntax definitions
 NeoBundle "groenewege/vim-less"
@@ -177,6 +179,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" I want new splits to appear to the right and to the bottom of the current
+set splitbelow
+set splitright
 " }}}
 
 
