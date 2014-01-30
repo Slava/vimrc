@@ -71,7 +71,6 @@ NeoBundle "groenewege/vim-less"
 NeoBundle "elzr/vim-json"
 NeoBundle "tpope/vim-markdown"
 NeoBundle "pangloss/vim-javascript"
-NeoBundle "guns/vim-clojure-static"
 NeoBundle "leafgarland/typescript-vim"
 
 " OMG OMG, shell in my VIM {{{
