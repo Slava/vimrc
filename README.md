@@ -10,13 +10,9 @@ Install `neobundle`
     $ mkdir -p ~/.vim/bundle
     $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
-Open `vim` and install all the packages:
+Open `vim`, install all the packages, quit vim:
 
-    $ vim
-   
-    # in Vim:
-    :NeoBundleInstall
-
+    $ vim -c "NeoBundleInstall" -c "q"
 
 Finish installation by installing `tern-meteor`:
 

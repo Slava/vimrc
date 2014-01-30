@@ -21,9 +21,11 @@ NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable = 1
 " Search settings
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
+if exists("*unite")
+  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+  call unite#filters#sorter_default#use(['sorter_rank'])
+  call unite#set_profile('files', 'smartcase', 1)
+endif
 "}}}
 
 " Auto-completion plugin integrated with Unite and vimshell {{{
@@ -102,7 +104,13 @@ let g:solarized_termcolors = 256
 let g:solarized_termtrans = 0 " set to 1 if using transparant background
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme solarized
+
+try
+  colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    " we don't have this theme, whatever
+endtry
+
 "set background=light
 set background=dark
 " }}}
@@ -202,7 +210,9 @@ nmap <leader>l :set list!<CR>
 " Toggle Gundo on <leader>G
 nmap <leader>G :GundoToggle<CR>
 " Toggle background
-call togglebg#map("<leader>B")
+if exists("*togglebg")
+  call togglebg#map("<leader>B")
+endif
 " Toggle spelling on/off
 nmap <silent> <leader>s :set spell!<CR>
 " Tab movements
