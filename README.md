@@ -63,6 +63,8 @@ Feature requests
 
 - Fixed identation for JS, Handlebars and CSS
 - no dependency on fonts
+- install script should take into consideration the existing `.vimrc` and `.vim`
+  folders not to override someone's setup accidentally
 
 Installation
 ---
@@ -71,7 +73,8 @@ You can run the bash script from this repo which will take care of everything
 but will do something terrible if you already have any of `.vim` or `.vimrc`.
 But it works great on a clean set up:
 
-    $ curl https://raw.github.com/Slava/vimrc/master/install-script.sh | sh
+    $ curl https://raw.github.com/Slava/vimrc/master/install-script.sh > install-script.sh
+    $ bash ./install-script.sh
 
 Manual installation
 ---
