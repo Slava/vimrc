@@ -7,30 +7,31 @@ Features
 ---
 
 - Syntax highlighting for common things in webdev
-  * JavaScript
-  * Handlebars templating
-  * Less
-  * JSON
-  * Typescript
-  * Markdown
-- Unite.vim with awesome fuzzy search features
+  * [JavaScript](https://github.com/pangloss/vim-javascript)
+  * [Less](groenewege/vim-less)
+  * [JSON](elzr/vim-json)
+  * [Typescript](leafgarland/typescript-vim)
+  * [Markdown](tpope/vim-markdown)
+- [Unite.vim](https://github.com/Shougo/unite.vim) with awesome fuzzy search features
   * `<C-N>` to open a file
   * `<C-P>` to open a buffer
   * `<leader>D` to change the current directory
-  * `:VimShell` to open a shell written in vimscript. It is not the best shell
-    ever but is good enough to run tests quickly
+  * [`:VimShell`](https://github.com/Shougo/vimshell.vim) to open a shell written in vimscript.
+    It is not the best shell ever but is good enough to run tests quickly
+    + You will probably need to change the default vim command from `mvim` to what you want (`gvim` or `vim`)
   * `<leader>p` to paste a segment from yank history
-- Gundo.vim to jump between file's edit versions
+- [Gundo.vim](https://github.com/sjl/gundo.vim) to jump between file's edit versions
   * `<leader>G` to toggle
-- Surround.vim - which is essential
-- Tern.js plugin with Meteor support - like IntelliSense for JavaScript
+- [Surround.vim](https://github.com/tpope/vim-surround) - which is essential
+- [Tern.js](http://ternjs.net/) plugin with
+  [Meteor support](https://github.com/Slava/tern-meteor) - like IntelliSense for JavaScript
 
 Weird visual things you might want to change
 
-- vim-airline - status bar
+- [vim-airline](https://github.com/bling/vim-airline) - status bar
   * needs a customized font for MacVim (XXX add this to install script)
-- Solarized theme
-- vim-signature - to visually see marks
+- [Solarized theme](http://ethanschoonover.com/solarized)
+- [vim-signature](https://github.com/kshenoy/vim-signature) - to visually see marks
 - new splits are added on the bottom, not on the top;
 - new visual splits appear on the right, not on the left.
 
@@ -65,6 +66,13 @@ Feature requests
 - no dependency on fonts
 - install script should take into consideration the existing `.vimrc` and `.vim`
   folders not to override someone's setup accidentally
+
+To be researched
+---
+
+- replace `neocomplcache` with a newer `neocomplcache` (brings another lua dependency)
+- or replace `neocomplcache` with `YouCompleteMe` plugin (the installation is harder, works as a fuzzy matcher)
+- reduce the number of stuff displayed on airline
 
 Installation
 ---
