@@ -1,5 +1,82 @@
-Installation
+Slava's vim setup
 ===
+
+This is my setup I've been using for the last 6 month or so.
+
+Features
+---
+
+- Syntax highlighting for common things in webdev
+  * JavaScript
+  * Handlebars templating
+  * Less
+  * JSON
+  * Typescript
+  * Markdown
+- Unite.vim with awesome fuzzy search features
+  * `<C-N>` to open a file
+  * `<C-P>` to open a buffer
+  * `<leader>D` to change the current directory
+  * `:VimShell` to open a shell written in vimscript. It is not the best shell
+    ever but is good enough to run tests quickly
+  * `<leader>p` to paste a segment from yank history
+- Gundo.vim to jump between file's edit versions
+  * `<leader>G` to toggle
+- Surround.vim - which is essential
+- Tern.js plugin with Meteor support - like IntelliSense for JavaScript
+
+Weird visual things you might want to change
+
+- vim-airline - status bar
+  * needs a customized font for MacVim (XXX add this to install script)
+- Solarized theme
+- vim-signature - to visually see marks
+
+
+Weird bindings you might want to change
+
+- `<leader>` is mapped to comma `,`
+- `<C-hjkl>` mapped to movement between splits
+- `<leader>/` to kill current search
+- `<leader>s` to enable/disable the spellchecker
+- `<leader>l` to highlight non-printing characters
+- `<leader>B` is supposed to switch the background
+- `<leader>m` and `<leader>n` to switch between tabs
+- quick `jk` in insert mode is mapped to `ESC` to avoid pressing `ESC`
+
+
+What sucks
+---
+
+I will be honest, the following things suck and I didn't fix them yet:
+
+- formatting is broken for a lot of things
+- plugins are written in JavaScript, Python and VimScript - 3 different
+  languages
+- everything is `<C-n>` and `<C-p>` centric. Because I mapped them to my thumb
+  on Kinesis doesn't mean it is great for everyone
+- the completion popup on the top is annoying and I would love it was on the
+  bottom, didn't figure out how to do that yet. Repaint time on in-console vim
+  is terrible.
+
+Feature requests
+---
+
+- Fixed identation for JS, Handlebars and CSS
+- no dependency on fonts
+- Put the damn popup on the bottom
+
+Installation
+---
+
+You can run the bash script from this repo which will take care of everything
+but will do something terrible if you already have any of `.vim` or `.vimrc`.
+But it works great on a clean set up:
+
+    $ curl https://raw.github.com/Slava/vimrc/master/install-script.sh | sh
+
+Manual installation
+---
 
 Download `.vimrc` file.
 
