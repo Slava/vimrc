@@ -1,7 +1,10 @@
 Slava's vim setup
 ===
 
-This is my setup I've been using for the last 6 month or so.
+This is my setup I've been using for the last 6 month or so. This configuration wasn't meant
+to be used on remote hosts where you edit your configs over ssh, because nobody does it.
+Likely, this config can be used for day-to-day development if you are brave enough to use
+someone's config on your Vim (I am not). However, it can act as a good learning material to someone.
 
 Features
 ---
@@ -73,6 +76,16 @@ To be researched
 - replace `neocomplcache` with a newer `neocomplcache` (brings another lua dependency)
 - or replace `neocomplcache` with `YouCompleteMe` plugin (the installation is harder, works as a fuzzy matcher)
 - reduce the number of stuff displayed on airline
+
+Dependencies
+---
+
+Latest MacVim works well as of 7.4 patch around August 2013
+
+- Python support for Vim
+- npm and node.js for `ternjs`
+- C compiler for `unite.vim`
+- git to fetch dependencies (this sucks, I know)
 
 Installation
 ---
