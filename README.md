@@ -31,6 +31,8 @@ Weird visual things you might want to change
   * needs a customized font for MacVim (XXX add this to install script)
 - Solarized theme
 - vim-signature - to visually see marks
+- new splits are added on the bottom, not on the top;
+- new visual splits appear on the right, not on the left.
 
 
 Weird bindings you might want to change
@@ -55,16 +57,12 @@ I will be honest, the following things suck and I didn't fix them yet:
   languages
 - everything is `<C-n>` and `<C-p>` centric. Because I mapped them to my thumb
   on Kinesis doesn't mean it is great for everyone
-- the completion popup on the top is annoying and I would love it was on the
-  bottom, didn't figure out how to do that yet. Repaint time on in-console vim
-  is terrible.
 
 Feature requests
 ---
 
 - Fixed identation for JS, Handlebars and CSS
 - no dependency on fonts
-- Put the damn popup on the bottom
 
 Installation
 ---
