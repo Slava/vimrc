@@ -93,6 +93,15 @@ if has("gui_running")
   " Even special font for this crap
   set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline
 endif
+
+function! AirlineOverride(...)
+  let g:airline_section_a = airline#section#create(['mode'])
+  let g:airline_section_b = airline#section#create_left(['branch'])
+  let g:airline_section_c = airline#section#create_left(['%f'])
+  let g:airline_section_y = airline#section#create([])
+endfunction
+autocmd VimEnter * call AirlineOverride()
+
 " }}}
 
 " Visually sets marks
