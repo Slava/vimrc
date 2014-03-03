@@ -48,6 +48,8 @@ Weird bindings you might want to change
 - `<leader>l` to highlight non-printing characters
 - `<leader>B` is supposed to switch the background
 - `<leader>m` and `<leader>n` to switch between tabs
+- `;` in the normal mode enters the command mode (just like `:`). The original
+  action of `;` (repeat the last `t`) is not preserved.
 - quick `jk` in insert mode is mapped to `ESC` to avoid pressing `ESC`
 
 

@@ -212,6 +212,9 @@ if has("gui_running")
   set guioptions-=L
 endif
 
+" Semicolon is just colon
+nnoremap ; :
+
 " Tweak ESC to be 'jk' typed fast
 imap jk <ESC>
 " Do not disable it, since kinesis has cool remap to the left thumb
