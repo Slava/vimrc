@@ -223,24 +223,22 @@ imap jk <ESC>
 
 " #Leader mappings {{{
 " Show/hide invisibles by <leader>l
-nmap <leader>l :set list!<CR>
-" Toggle Gundo on <leader>G
-nmap <leader>G :GundoToggle<CR>
+nnoremap <leader>l :set list!<CR>
 " Toggle background
-if exists("*togglebg")
-  call togglebg#map("<leader>B")
-endif
+nnoremap <leader>B :ToggleBG<CR>
 " Toggle spelling on/off
-nmap <silent> <leader>s :set spell!<CR>
+nnoremap <silent> <leader>s :set spell!<CR>
 " Tab movements
-nnoremap <leader>m :tabn<return>
-nnoremap <leader>n :tabp<return>
+nnoremap <leader>m :tabn<CR>
+nnoremap <leader>n :tabp<CR>
 " Save file quickly
 nnoremap <leader>w :w<CR>
 " Quickly cd to directory
 nnoremap <leader>D :Unite -start-insert directory<CR>
 " Paste from the yank history
 nnoremap <leader>p :Unite -start-insert history/yank<CR>
+" Toggle Gundo on <leader>G
+nmap <leader>G :GundoToggle<CR>
 " }}}
 
 " #Other mappings {{{
