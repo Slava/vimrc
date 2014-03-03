@@ -91,7 +91,8 @@ Latest MacVim works well as of 7.4 patch around August 2013
 - Python support for Vim
 - npm and node.js for `ternjs`
 - C compiler for `unite.vim`
-- git to fetch dependencies (this sucks, I know)
+- `git` to fetch dependencies (this sucks, I know)
+- `ag` (optional) for the speedy subdirectory search (see [the repo](https://github.com/ggreer/the_silver_searcher))
 
 Installation
 ---
