@@ -16,7 +16,10 @@ Features
   * [Typescript](leafgarland/typescript-vim)
   * [Markdown](tpope/vim-markdown)
 - [Unite.vim](https://github.com/Shougo/unite.vim) with awesome fuzzy search features
-  * `<C-N>` to open a file
+  * `<C-N>` to open a file in the current directory
+  * `<leader><C-N>` to open a file in some subdirectory recursively using an
+    external program for speed. (uses `find` by default, install `ag` for
+    speed, will be used if available).
   * `<C-P>` to open a buffer
   * `<leader>D` to change the current directory
   * [`:VimShell`](https://github.com/Shougo/vimshell.vim) to open a shell written in vimscript.

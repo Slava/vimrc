@@ -21,6 +21,18 @@ NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable = 1
 let g:unite_split_rule = "botright"
+
+" `ag` is a faster and better replacement for the standard `find`, let Unite use
+" it if it exists and configure to properly use `.gitignore` or `.hgignore`
+" files if those exist.
+" To install `ag`: brew install ag
+" or: https://github.com/ggreer/the_silver_searcher
+if executable("ag")
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 " Search settings
 if exists("*unite")
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -244,6 +256,7 @@ nmap <leader>G :GundoToggle<CR>
 " #Other mappings {{{
 " Quickly open files or buffers
 nnoremap <C-n> :Unite -start-insert file<CR>
+nnoremap <leader><C-n> :Unite -start-insert file_rec/async<CR>
 nnoremap <C-p> :Unite -start-insert buffer<CR>
 "}}}
 
