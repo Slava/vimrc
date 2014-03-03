@@ -81,6 +81,60 @@ NeoBundle 'jiangmiao/auto-pairs'
 " Git wrapper
 NeoBundle 'tpope/vim-fugitive'
 
+let g:unite_source_menu_menus = {}
+" Fugitive menu in Unite (depends on both Fugitive and Unite.vim) {{{
+let g:unite_source_menu_menus.git = {}
+let g:unite_source_menu_menus.git.description = 'git (Fugitive)'
+let g:unite_source_menu_menus.git.command_candidates = [
+    \['▷ git status       (Fugitive)',
+        \'Gstatus'],
+    \['▷ git diff         (Fugitive)',
+        \'Gdiff'],
+    \['▷ git commit       (Fugitive)',
+        \'Gcommit'],
+    \['▷ git log          (Fugitive)',
+        \'exe "silent Glog | Unite quickfix"'],
+    \['▷ git blame        (Fugitive)',
+        \'Gblame'],
+    \['▷ git stage        (Fugitive)',
+        \'Gwrite'],
+    \['▷ git checkout     (Fugitive)',
+        \'Gread'],
+    \['▷ git rm           (Fugitive)',
+        \'Gremove'],
+    \['▷ git mv           (Fugitive)',
+        \'exe "Gmove " input("destino: ")'],
+    \['▷ git push         (Fugitive, output buffer)',
+        \'Git! push'],
+    \['▷ git pull         (Fugitive, output buffer)',
+        \'Git! pull'],
+    \['▷ git prompt       (Fugitive, output buffer)',
+        \'exe "Git! " input("comando git: ")'],
+    \['▷ git cd           (Fugitive)',
+        \'Gcd'],
+    \]
+" }}}
+
+" Different stuff in the menu (depends on Unite.vim) {{{
+let g:unite_source_menu_menus.all = {}
+let g:unite_source_menu_menus.all.description = 'All things'
+let g:unite_source_menu_menus.all.command_candidates = [
+    \['▷ gundo toggle undo tree', 'GundoToggle'],
+    \['▷ save file', 'write'],
+    \['▷ save all opened files', 'wall'],
+    \['▷ make the current window the only one on the screen', 'only'],
+    \['▷ open file (Unite)', 'Unite -start-insert file'],
+    \['▷ open file recursively (Unite)', 'Unite -start-insert file_rec/async'],
+    \['▷ open buffer (Unite)', 'Unite -start-insert buffer'],
+    \['▷ open directory (Unite)', 'Unite -start-insert directory'],
+    \['▷ toggle the background color', 'ToggleBG'],
+    \['▷ open the shell (VimShell)', 'VimShell'],
+    \['▷ open a new shell (VimShell)', 'VimShellCreate'],
+    \['▷ open a new shell in a tab (VimShell)', 'VimShellTab'],
+    \['▷ open a node interpreter (VimShell)', 'VimShellInteractive node'],
+    \]
+" }}}
+
 " Surrond plugin! Surrond text with a pair of anything (s in normal)
 NeoBundle 'tpope/vim-surround'
 
@@ -246,8 +300,6 @@ imap jk <ESC>
 " #Leader mappings {{{
 " Show/hide invisibles by <leader>l
 nnoremap <leader>l :set list!<CR>
-" Toggle background
-nnoremap <leader>B :ToggleBG<CR>
 " Toggle spelling on/off
 nnoremap <silent> <leader>s :set spell!<CR>
 " Tab movements
@@ -259,8 +311,10 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>D :Unite -start-insert directory<CR>
 " Paste from the yank history
 nnoremap <leader>p :Unite -start-insert history/yank<CR>
-" Toggle Gundo on <leader>G
-nmap <leader>G :GundoToggle<CR>
+" Trigger the git menu
+nnoremap <leader>g :Unite -silent -start-insert menu:git<CR>
+" Open all menus with useful stuff
+nnoremap <leader>j :Unite -silent -start-insert menu:all menu:git<CR>
 " }}}
 
 " #Other mappings {{{

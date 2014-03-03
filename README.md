@@ -26,9 +26,11 @@ Features
     It is not the best shell ever but is good enough to run tests quickly
     + You will probably need to change the default vim command from `mvim` to what you want (`gvim` or `vim`)
   * `<leader>p` to paste a segment from yank history
+  * `<leader>j` to open a list of other menu items (editable in vimrc)
 - [Gundo.vim](https://github.com/sjl/gundo.vim) to jump between file's edit versions
-  * `<leader>G` to toggle
-- [Surround.vim](https://github.com/tpope/vim-surround) - which is essential
+- [Surround.vim](https://github.com/tpope/vim-surround) - to surround text with
+  tags, brackets, parentheses or quotes
+- [Fugitive.vim](https://github.com/tpope/vim-fugitive) - git wrapper
 - [Tern.js](http://ternjs.net/) plugin with
   [Meteor support](https://github.com/Slava/tern-meteor) - like IntelliSense for JavaScript
 
@@ -49,9 +51,9 @@ Weird bindings you might want to change
 - `<leader>/` to kill current search
 - `<leader>s` to enable/disable the spellchecker
 - `<leader>l` to highlight non-printing characters
-- `<leader>B` is supposed to switch the background
 - `<leader>m` and `<leader>n` to switch between tabs
 - `<leader>w` saves the file (maps to `:w<enter>`)
+- `<leader>j` to open a list of menu items
 - `;` in the normal mode enters the command mode (just like `:`). The original
   action of `;` (repeat the last `t`) is not preserved.
 - quick `jk` in insert mode is mapped to `ESC` to avoid pressing `ESC`
