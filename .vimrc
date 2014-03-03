@@ -235,6 +235,8 @@ nmap <silent> <leader>s :set spell!<CR>
 " Tab movements
 nnoremap <leader>m :tabn<return>
 nnoremap <leader>n :tabp<return>
+" Save file quickly
+nnoremap <leader>w :w<CR>
 " Quickly cd to directory
 nnoremap <leader>D :Unite -start-insert directory<CR>
 " Paste from the yank history
