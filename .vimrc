@@ -49,7 +49,7 @@ endif
 "}}}
 
 " Auto-completion plugin integrated with Unite and vimshell {{{
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete.vim'
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.

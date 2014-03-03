@@ -78,21 +78,16 @@ Feature requests
 - install script should take into consideration the existing `.vimrc` and `.vim`
   folders not to override someone's setup accidentally
 
-To be researched
----
-
-- replace `neocomplcache` with a newer `neocomplcache` (brings another lua dependency)
-- or replace `neocomplcache` with `YouCompleteMe` plugin (the installation is harder, works as a fuzzy matcher)
-- reduce the number of stuff displayed on airline
-
 Dependencies
 ---
 
 Latest MacVim works well as of 7.4 patch around August 2013
 
-- Python support for Vim
+- Vim built with `+python` for `ternjs` and `gundo`
+- Vim built with `+lua` for `neocomplete.vim`
 - npm and node.js for `ternjs`
 - C compiler for `unite.vim`
+- `make` for `vimproc`
 - `git` to fetch dependencies (this sucks, I know)
 - `ag` (optional) for the speedy subdirectory search (see [the repo](https://github.com/ggreer/the_silver_searcher))
 
