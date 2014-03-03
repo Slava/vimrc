@@ -58,6 +58,9 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
+" No limit on the results of these searches
+let g:unite_source_file_rec_max_cache_files = 0
+call unite#custom#source('file_rec/async', 'max_candidates', 0)
 
 " Use TAB to complete
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
