@@ -160,6 +160,7 @@ endif
 
 " ##Visual
 " Prettiness on the bottom {{{
+" That weird colorful line on the bottom
 NeoBundle "bling/vim-airline"
 let g:airline_theme='solarized'
 set laststatus=2
@@ -167,7 +168,7 @@ set encoding=utf-8
 if has("gui_running")
   let g:airline_powerline_fonts=1
   " Even special font for this crap
-  set guifont=Meslo\ LG\ M\ Regular\ for\ Powerline
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 endif
 
 function! AirlineOverride(...)
@@ -188,7 +189,7 @@ NeoBundle "altercation/vim-colors-solarized"
 set t_Co=256
 let g:solarized_termcolors = 256
 let g:solarized_termtrans = 0 " set to 1 if using transparant background
-let g:solarized_visibility = "high"
+let g:solarized_visibility = "normal"
 let g:solarized_contrast = "high"
 
 try
@@ -286,6 +287,8 @@ set directory=/tmp
 " MacVim or GVim options
 if has("gui_running")
   set guioptions-=L
+  set guioptions-=r
+  set guioptions-=T
 endif
 
 " Semicolon is just colon
