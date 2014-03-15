@@ -81,6 +81,10 @@ NeoBundle 'jiangmiao/auto-pairs'
 " Git wrapper
 NeoBundle 'tpope/vim-fugitive'
 
+" A lot of shortcuts for next/prev navigation, usually is [x and ]x for moving
+" back and forth for X
+NeoBundle 'tpope/vim-unimpaired'
+
 let g:unite_source_menu_menus = {}
 " Fugitive menu in Unite (depends on both Fugitive and Unite.vim) {{{
 let g:unite_source_menu_menus.git = {}
