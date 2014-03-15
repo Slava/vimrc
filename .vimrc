@@ -153,6 +153,9 @@ NeoBundle "leafgarland/typescript-vim"
 NeoBundle "Shougo/vimshell"
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
+" open new splits actually in new tab
+let g:vimshell_split_command = "tabnew"
+
 if has("gui_running")
   let g:vimshell_editor_command = "mvim"
 endif
