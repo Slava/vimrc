@@ -347,7 +347,7 @@ nnoremap <leader>j :Unite -silent -start-insert menu:all menu:git<CR>
 
 " #Other mappings {{{
 " Quickly open files or buffers
-nnoremap <C-n> :Unite -start-insert file<CR>
+nnoremap <C-n> :Unite -start-insert file -profile-name=files<CR>
 nnoremap <leader><C-n> :Unite -start-insert file_rec/async<CR>
 nnoremap <C-p> :Unite -start-insert buffer<CR>
 "}}}
