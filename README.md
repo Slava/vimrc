@@ -11,10 +11,11 @@ Features
 
 - Syntax highlighting for common things in webdev
   * [JavaScript](https://github.com/pangloss/vim-javascript)
-  * [Less](groenewege/vim-less)
-  * [JSON](elzr/vim-json)
-  * [Typescript](leafgarland/typescript-vim)
-  * [Markdown](tpope/vim-markdown)
+  * [Less](https://github.com/groenewege/vim-less)
+  * [JSON](https://github.com/elzr/vim-json)
+  * [Typescript](https://github.com/leafgarland/typescript-vim)
+  * [Coffee](https://github.com/kchmck/vim-coffee-script)
+  * [Markdown](https://github.com/tpope/vim-markdown)
 - [Unite.vim](https://github.com/Shougo/unite.vim) with awesome fuzzy search features
   * `<C-N>` to open a file in the current directory
   * `<leader><C-N>` to open a file in some subdirectory recursively using an
@@ -38,7 +39,8 @@ Weird visual things you might want to change
 
 - [vim-airline](https://github.com/bling/vim-airline) - status bar
   * needs a customized font for MacVim (XXX add this to install script)
-- [Solarized theme](http://ethanschoonover.com/solarized)
+- [Tomorrow Night Theme](https://github.com/Slava/vim-tomorrow-js) -
+  specifically, a fork extended for JS
 - [vim-signature](https://github.com/kshenoy/vim-signature) - to visually see marks
 - new splits are added on the bottom, not on the top;
 - new visual splits appear on the right, not on the left.
