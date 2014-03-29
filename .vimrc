@@ -190,7 +190,7 @@ endif
 " Prettiness on the bottom {{{
 " That weird colorful line on the bottom
 NeoBundle "bling/vim-airline"
-let g:airline_theme='solarized'
+let g:airline_theme='tomorrow'
 set laststatus=2
 set encoding=utf-8
 if has("gui_running")
@@ -213,21 +213,32 @@ autocmd VimEnter * call AirlineOverride()
 NeoBundle "kshenoy/vim-signature"
 
 " Colorscheme {{{
-NeoBundle "altercation/vim-colors-solarized"
-set t_Co=256
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 0 " set to 1 if using transparant background
-let g:solarized_visibility = "normal"
-let g:solarized_contrast = "high"
+" Uncomment the following to start using Solarized
+" NeoBundle "altercation/vim-colors-solarized"
+" set t_Co=256
+" let g:solarized_termcolors = 256
+" let g:solarized_termtrans = 0 " set to 1 if using transparant background
+" let g:solarized_visibility = "normal"
+" let g:solarized_contrast = "high"
+"
+" try
+"   colorscheme solarized
+" catch /^Vim\%((\a\+)\)\=:E185/
+"     " we don't have this theme, whatever
+" endtry
+"
+" "set background=light
+" set background=dark
+
+" A weird fork by Slava
+NeoBundle "Slava/vim-tomorrow-js"
 
 try
-  colorscheme solarized
+  colorscheme tomorrow_night
 catch /^Vim\%((\a\+)\)\=:E185/
-    " we don't have this theme, whatever
+  " sad sad
 endtry
 
-"set background=light
-set background=dark
 " }}}
 
 " }}}
