@@ -96,9 +96,15 @@ Latest MacVim works well as of 7.4 patch around August 2013
 Installation
 ---
 
-You can run the bash script from this repo which will take care of everything
-but will do something terrible if you already have any of `.vim` or `.vimrc`.
-But it works great on a clean set up:
+First of all be sure to have a compatible version of Vim. The easiest way to
+install a full-featured Vim on Mac OS X with homebrew is to run
+`brew install macvim -v --override-system-vim --with-lua --with-luajit` in your
+terminal. (Instructions for other platforms satisfying the
+[dependencies](#dependencies) are welcome)
+
+After you can run the bash script from this repo which will take care of
+everything but will do something terrible if you already have any of `.vim` or
+`.vimrc`. But it works great on a clean set up:
 
     $ curl https://raw.github.com/Slava/vimrc/master/install-script.sh > install-script.sh
     $ bash ./install-script.sh
