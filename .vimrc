@@ -173,6 +173,8 @@ NeoBundle "elzr/vim-json"
 NeoBundle "tpope/vim-markdown"
 NeoBundle "pangloss/vim-javascript"
 NeoBundle "leafgarland/typescript-vim"
+" Actually does much more than syntax highlighting but that's overkill for me
+NeoBundle "kchmck/vim-coffee-script"
 
 " OMG OMG, shell in my VIM {{{
 NeoBundle "Shougo/vimshell"
