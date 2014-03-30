@@ -175,6 +175,7 @@ NeoBundle "pangloss/vim-javascript"
 NeoBundle "leafgarland/typescript-vim"
 " Actually does much more than syntax highlighting but that's overkill for me
 NeoBundle "kchmck/vim-coffee-script"
+NeoBundle "hdima/python-syntax"
 
 " OMG OMG, shell in my VIM {{{
 NeoBundle "Shougo/vimshell"
@@ -215,31 +216,20 @@ autocmd VimEnter * call AirlineOverride()
 NeoBundle "kshenoy/vim-signature"
 
 " Colorscheme {{{
-" Uncomment the following to start using Solarized
-" NeoBundle "altercation/vim-colors-solarized"
-" set t_Co=256
-" let g:solarized_termcolors = 256
-" let g:solarized_termtrans = 0 " set to 1 if using transparant background
-" let g:solarized_visibility = "normal"
-" let g:solarized_contrast = "high"
-"
-" try
-"   colorscheme solarized
-" catch /^Vim\%((\a\+)\)\=:E185/
-"     " we don't have this theme, whatever
-" endtry
-"
-" "set background=light
-" set background=dark
-
-" A weird fork by Slava
-NeoBundle "Slava/vim-tomorrow-js"
+NeoBundle "Slava/vim-colors-tomorrow"
+set t_Co=256
+let g:tomorrow_termcolors = 256
+let g:tomorrow_termtrans = 0 " set to 1 if using transparant background
+let g:tomorrow_diffmode = "high"
 
 try
-  colorscheme tomorrow_night
-catch /^Vim\%((\a\+)\)\=:E185/
-  " sad sad
+  colorscheme tomorrow
+catch
+    " we don't have this theme or it throws
 endtry
+
+"set background=light
+set background=dark
 
 " }}}
 
@@ -369,9 +359,17 @@ nnoremap <C-p> :Unite -start-insert buffer<CR>
 "}}}
 
 " Automatically reload vimrc when it's saved
-autocmd BufWritePost .vimrc so ~/.vimrc
+augroup VimrcSo
+  au!
+  autocmd BufWritePost $MYVIMRC so $MYVIMRC
+augroup END
 
 " Set shell to bash (because vim would conflict with the default system shell)
 set shell=/bin/bash
 
+
+" For debugging colorschemes
+nmap 0000 :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
