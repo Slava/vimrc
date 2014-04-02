@@ -1,7 +1,7 @@
 " vim: set fdm=marker :
 
 " #Bundles {{{
-
+" Bundler that knows how to 'make' "{{{
 if has('vim_starting')
   set nocompatible               " Be iMproved
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -9,10 +9,10 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-" Bundler that knows how to 'make'
 NeoBundleFetch 'Shougo/neobundle.vim'
+"}}}
 
-" Run and manage child processes, dependency of many other plugins
+" Run and manage child processes, dependency of many other plugins "{{{
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -21,6 +21,7 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
+"}}}
 
 " Ultimate UI system for running fuzzy-search on different things {{{
 NeoBundle 'Shougo/unite.vim'
@@ -92,6 +93,9 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "}}}
+" Expand/shrink the visual selection by text-object blocks with `+` and `_` in
+" the visual mode
+NeoBundle 'terryma/vim-expand-region'
 
 " Undo/Redo tree
 NeoBundle 'sjl/gundo.vim'
@@ -106,8 +110,8 @@ NeoBundle 'tpope/vim-fugitive'
 " back and forth for X
 NeoBundle 'tpope/vim-unimpaired'
 
-let g:unite_source_menu_menus = {}
 " Fugitive menu in Unite (depends on both Fugitive and Unite.vim) {{{
+let g:unite_source_menu_menus = {}
 let g:unite_source_menu_menus.git = {}
 let g:unite_source_menu_menus.git.description = 'git (Fugitive)'
 let g:unite_source_menu_menus.git.command_candidates = [
@@ -157,17 +161,23 @@ let g:unite_source_menu_menus.all.command_candidates = [
     \['▷ open a new shell (VimShell)', 'VimShellCreate'],
     \['▷ open a new shell in a tab (VimShell)', 'VimShellTab'],
     \['▷ open a node interpreter (VimShell)', 'VimShellInteractive node'],
+    \['▷ install bundles (NeoBundleInstall)', 'NeoBundleInstall'],
+    \['▷ clean bundles (NeoBundleClean)', 'NeoBundleClean'],
+    \['▷ update bundles (NeoBundleUpdate)', 'NeoBundleUpdate'],
     \]
 " }}}
 
-" Surrond plugin! Surrond text with a pair of anything (s in normal)
+" Surrond plugin! Surrond text with a pair of anything (s in normal) "{{{
 NeoBundle 'tpope/vim-surround'
+"}}}
 
-" Vim JS autocompletion with type hints
+" Vim JS autocompletion with type hints "{{{
 NeoBundle 'marijnh/tern_for_vim'
 let g:tern_show_argument_hints = 'on_move'
+"}}}
 
-" Syntax definitions
+" Syntax definitions "{{{
+NeoBundle "slava/vim-spacebars"
 NeoBundle "groenewege/vim-less"
 NeoBundle "elzr/vim-json"
 NeoBundle "tpope/vim-markdown"
@@ -176,6 +186,7 @@ NeoBundle "leafgarland/typescript-vim"
 " Actually does much more than syntax highlighting but that's overkill for me
 NeoBundle "kchmck/vim-coffee-script"
 NeoBundle "hdima/python-syntax"
+"}}}
 
 " OMG OMG, shell in my VIM {{{
 NeoBundle "Shougo/vimshell"
@@ -302,25 +313,28 @@ set splitright
 " }}}
 
 
-" Wrapping tweaks
+" Wrapping tweaks "{{{
 set wrap
 set linebreak
 set textwidth=80
 set formatoptions=cq " format using textwidth, including comments and gq
+"}}}
 
 " I can type :help myself, thanks.
 noremap <F1> <Esc>
 
-" Gaming swap files
+" Gaming swap files "{{{
 set backupdir=/tmp
 set directory=/tmp
+"}}}
 
-" MacVim or GVim options
+" MacVim or GVim options "{{{
 if has("gui_running")
   set guioptions-=L
   set guioptions-=r
   set guioptions-=T
 endif
+"}}}
 
 " Semicolon is just colon
 nnoremap ; :
@@ -358,11 +372,12 @@ nnoremap <leader><C-n> :Unite -start-insert file_rec/async<CR>
 nnoremap <C-p> :Unite -start-insert buffer<CR>
 "}}}
 
-" Automatically reload vimrc when it's saved
+" Automatically reload vimrc when it's saved "{{{
 augroup VimrcSo
   au!
   autocmd BufWritePost $MYVIMRC so $MYVIMRC
 augroup END
+"}}}
 
 " Set shell to bash (because vim would conflict with the default system shell)
 set shell=/bin/bash
