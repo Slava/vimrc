@@ -323,9 +323,22 @@ set formatoptions=cq " format using textwidth, including comments and gq
 " I can type :help myself, thanks.
 noremap <F1> <Esc>
 
+" Save undo history persistently on disk, takes extra space "{{{
+if has('persistent_undo')         " persistend undo history
+  " create the directory if it doesn't exist
+  silent !mkdir ~/.vim/undo > /dev/null 2>&1
+  set undofile                  " Save undo's after file closes
+  set undodir=~/.vim/undo/      " where to save undo histories
+  set undolevels=100            " How many undos
+  set undoreload=3000           " number of lines to save for undo
+endif
+"}}}
+
 " Gaming swap files "{{{
-set backupdir=/tmp
-set directory=/tmp
+" create the directory if it doesn't exist
+silent !mkdir ~/.vim/swap > /dev/null 2>&1
+set backupdir=~/.vim/swap/
+set directory=~/.vim/swap/
 "}}}
 
 " MacVim or GVim options "{{{
