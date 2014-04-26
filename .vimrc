@@ -287,6 +287,10 @@ set expandtab
 " Allows to use mouse to move the cursor
 set mouse=a
 
+" Tweak the behavior of <Tab> in command mode
+set wildmenu
+set wildmode=longest:full,full
+
 " Indentation tweaks:
 " reselect visual block after indent/outdent
 vnoremap < <gv
