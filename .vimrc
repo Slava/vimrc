@@ -399,9 +399,9 @@ augroup END
 " Set shell to bash (because vim would conflict with the default system shell)
 set shell=/bin/bash
 
+" For the VimR search rules
+set wildignore=*.so,*.a,*.pyc,.meteor,.build.*,.git
 
-" For debugging colorschemes
-nmap 0000 :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" This is good enough for folding and is not as slow as "syntax"
+set foldmethod=indent
 
