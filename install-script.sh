@@ -5,7 +5,7 @@ curl https://raw.githubusercontent.com/Slava/vimrc/master/.vimrc > ~/.vimrc
 
 # Install the bundler
 mkdir -p ~/.vim/bundle
-git clone https://githubusercontent.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # Install all bundles
 vim -c "NeoBundleInstall" -c "q"
