@@ -108,6 +108,20 @@ NeoBundle 'tpope/vim-fugitive'
 " back and forth for X
 NeoBundle 'tpope/vim-unimpaired'
 
+" Easy commands to rename tabs {{{
+NeoBundle 'gcmt/taboo.vim'
+" required to be able to save the tab names into a session
+set sessionoptions+=tabpages,globals
+" }}}
+
+" Save sessions {{{
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
+let g:session_autosave_periodic = 1
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+" }}}
+
 " Fugitive menu in Unite (depends on both Fugitive and Unite.vim) {{{
 let g:unite_source_menu_menus = {}
 let g:unite_source_menu_menus.git = {}
@@ -153,7 +167,8 @@ let g:unite_source_menu_menus.all.command_candidates = [
     \['▷ open file (Unite)', 'Unite -start-insert file'],
     \['▷ open file recursively (Unite)', 'Unite -start-insert files_ag'],
     \['▷ open buffer (Unite)', 'Unite -start-insert buffer'],
-    \['▷ open directory (Unite)', 'Unite -start-insert directory'],
+    \['▷ open directory (Unite)', 'Unite -start-insert directory -profile-name=files'],
+    \['▷ open tab (Unite)', 'Unite -start-insert tab'],
     \['▷ toggle the background color', 'ToggleBG'],
     \['▷ open the shell (VimShell)', 'VimShell'],
     \['▷ open a new shell (VimShell)', 'VimShellCreate'],
@@ -162,6 +177,7 @@ let g:unite_source_menu_menus.all.command_candidates = [
     \['▷ install bundles (NeoBundleInstall)', 'NeoBundleInstall'],
     \['▷ clean bundles (NeoBundleClean)', 'NeoBundleClean'],
     \['▷ update bundles (NeoBundleUpdate)', 'NeoBundleUpdate'],
+    \['▷ rename tab (Taboo)', 'execute "TabooRename " . input("New tab name:")'],
     \]
 " }}}
 
@@ -366,20 +382,22 @@ nnoremap <leader>n :tabp<CR>
 " Save file quickly
 nnoremap <leader>w :w<CR>
 " Quickly cd to directory
-nnoremap <leader>D :Unite -start-insert directory<CR>
+nnoremap <leader>d :Unite -start-insert directory -profile-name=files<CR>
 " Paste from the yank history
 nnoremap <leader>p :Unite -start-insert history/yank<CR>
 " Trigger the git menu
 nnoremap <leader>g :Unite -silent -start-insert menu:git<CR>
 " Open all menus with useful stuff
 nnoremap <leader>j :Unite -silent -start-insert menu:all menu:git<CR>
+" Select across all buffers
+nnoremap <leader>b :Unite -start-insert buffer<CR>
 " }}}
 
 " #Other mappings {{{
 " Quickly open files or buffers
 nnoremap <C-n> :Unite -start-insert file -profile-name=files<CR>
 nnoremap <C-space> :Unite -start-insert files_ag<CR>
-nnoremap <C-p> :Unite -start-insert buffer<CR>
+nnoremap <C-p> :Unite -start-insert buffer_tab<CR>
 "}}}
 
 " Automatically reload vimrc when it's saved "{{{
