@@ -11,7 +11,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-call neobundle#end()
 "}}}
 
 " Run and manage child processes, dependency of many other plugins "{{{
@@ -27,6 +26,7 @@ NeoBundle 'Shougo/vimproc', {
 
 " Ultimate UI system for running fuzzy-search on different things {{{
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Slava/vim-unite-files-ag'
 " Always start insert mode
 let g:unite_enable_start_insert = 1
 let g:unite_source_history_yank_enable = 1
@@ -84,10 +84,6 @@ inoremap <expr><C-y>  neocomplete#close_popup()
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
-
-" No limit on the results of these searches
-let g:unite_source_file_rec_max_cache_files = 0
-call unite#custom#source('file_rec/async', 'max_candidates', 0)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -155,7 +151,7 @@ let g:unite_source_menu_menus.all.command_candidates = [
     \['▷ save all opened files', 'wall'],
     \['▷ make the current window the only one on the screen', 'only'],
     \['▷ open file (Unite)', 'Unite -start-insert file'],
-    \['▷ open file recursively (Unite)', 'Unite -start-insert file_rec/async'],
+    \['▷ open file recursively (Unite)', 'Unite -start-insert files_ag'],
     \['▷ open buffer (Unite)', 'Unite -start-insert buffer'],
     \['▷ open directory (Unite)', 'Unite -start-insert directory'],
     \['▷ toggle the background color', 'ToggleBG'],
@@ -235,17 +231,12 @@ let g:tomorrow_termcolors = 256
 let g:tomorrow_termtrans = 0 " set to 1 if using transparant background
 let g:tomorrow_diffmode = "high"
 
-try
-  colorscheme tomorrow
-catch
-    " we don't have this theme or it throws
-endtry
-
 "set background=light
 set background=dark
 
 " }}}
 
+call neobundle#end()
 " }}}
 
 " #Essentials {{{
@@ -387,7 +378,7 @@ nnoremap <leader>j :Unite -silent -start-insert menu:all menu:git<CR>
 " #Other mappings {{{
 " Quickly open files or buffers
 nnoremap <C-n> :Unite -start-insert file -profile-name=files<CR>
-nnoremap <leader><C-n> :Unite -start-insert file_rec/async<CR>
+nnoremap <C-space> :Unite -start-insert files_ag<CR>
 nnoremap <C-p> :Unite -start-insert buffer<CR>
 "}}}
 
@@ -406,4 +397,10 @@ set wildignore=*.so,*.a,*.pyc,.meteor,.build.*,.git
 
 " This is good enough for folding and is not as slow as "syntax"
 set foldmethod=indent
+
+try
+  colorscheme tomorrow
+catch
+    " we don't have this theme or it throws
+endtry
 
