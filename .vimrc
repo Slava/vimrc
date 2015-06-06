@@ -356,9 +356,14 @@ set directory=~/.vim/swap/
 
 " MacVim or GVim options "{{{
 if has("gui_running")
+  " hide left-hand scrollbar
   set guioptions-=L
+  " hide right-hand scrollbar
   set guioptions-=r
+  " hide toolbar (gvim only)
   set guioptions-=T
+  " no pop-up dialogs
+  set guioptions-=c
 endif
 "}}}
 
@@ -418,6 +423,7 @@ set foldmethod=indent
 
 try
   colorscheme tomorrow
+  set background=dark
 catch
     " we don't have this theme or it throws
 endtry
