@@ -106,7 +106,7 @@ After you can run the bash script from this repo which will take care of
 everything but will do something terrible if you already have any of `.vim` or
 `.vimrc`. But it works great on a clean set up:
 
-    $ curl https://raw.github.com/Slava/vimrc/master/install-script.sh > install-script.sh
+    $ curl https://raw.githubusercontent.com/henry-hz/vimrc/master/install-script.sh > install-script.sh
     $ bash ./install-script.sh
 
 Manual installation
@@ -129,7 +129,7 @@ Finish installation by installing `tern-meteor`:
 
     $ cd ~/.vim/bundle/tern_for_vim/
     $ npm install
-    $ curl https://raw.github.com/Slava/tern-meteor/master/meteor.js > node_modules/tern/plugin/meteor.js
+    $ curl https://raw.githubusercontent.com/Slava/tern-meteor/master/meteor.js > node_modules/tern/plugin/meteor.js
 
 
 
