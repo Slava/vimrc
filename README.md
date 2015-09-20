@@ -106,7 +106,7 @@ After you can run the bash script from this repo which will take care of
 everything but will do something terrible if you already have any of `.vim` or
 `.vimrc`. But it works great on a clean set up:
 
-    $ curl https://raw.githubusercontent.com/henry-hz/vimrc/master/install-script.sh > install-script.sh
+    $ curl https://raw.githubusercontent.com/Slava/vimrc/master/install-script.sh > install-script.sh
     $ bash ./install-script.sh
 
 Manual installation
